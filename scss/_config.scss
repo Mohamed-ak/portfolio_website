@@ -1,0 +1,25 @@
+// Variables 
+$website-with: 1280px;
+$main-color: #ffbc00;
+$light-color: #f4f4f4;
+$dark-color: #333;
+$medium-color: #ccc;
+$bg-img: url('../img/showcase.jpg');
+$bezier: cubic-bezier(0.2, 1, 0.3, 1);
+
+
+// Color function 
+
+@function set-text-color($color) {
+  @if(lightness($color) > 50) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+
+@mixin set-bg-color($color) {
+ background-color: $color;
+ color: set-text-color($color);
+}
